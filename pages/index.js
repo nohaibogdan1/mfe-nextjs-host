@@ -1,9 +1,9 @@
 import Head from 'next/head'
-import styles from '@/styles/Home.module.css'
+// import styles from '@/styles/Home.module.css'
 import dynamic from 'next/dynamic'
 
 const RemoteComponent = dynamic(() => {return import("checkout/title")}, {ssr: false});
-const RemoteBitApp = dynamic(() => {return import("mars_weather/MarsWeatherComponent")}, {ssr: false});
+const RemotePage = dynamic(() => {return import("checkout/checkout")}, {ssr: false});
 
 
 export default function Home() {
@@ -15,9 +15,9 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={styles.main}>
+      <main>
         <RemoteComponent/>
-        <RemoteBitApp/>
+        <RemotePage/>
       </main>
     </>
   )
